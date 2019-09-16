@@ -1,0 +1,18 @@
+{{- if .Values.rbac.create -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ .Values.name }}:system:auth-delegator
+  namespace: {{ .Values.namespace }}
+  labels:
+    giantswarm.io/service-type: {{ .Values.serviceType }}
+    app: {{ .Values.k8sAppLabel }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+  - kind: ServiceAccount
+    name: {{ .Values.name }}
+    namespace: {{ .Values.namespace }}
+{{- end -}}
