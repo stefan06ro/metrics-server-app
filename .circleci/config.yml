@@ -8,8 +8,8 @@ workflows:
     jobs:
       - architect/push-to-app-catalog:
           name: "package and push metrics-server-app chart"
-          app_catalog: "giantswarm-catalog"
-          app_catalog_test: "giantswarm-test-catalog"
+          app_catalog: "default-catalog"
+          app_catalog_test: "default-test-catalog"
           chart: "metrics-server-app"
           # Trigger job on git tag.
           filters:
