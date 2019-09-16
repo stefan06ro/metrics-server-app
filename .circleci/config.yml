@@ -4,7 +4,7 @@ orbs:
 
 workflows:
   version: 2
-  build_e2e:
+  package-and-push-chart-on-tag:
     jobs:
       - architect/push-to-app-catalog:
           name: "package and push metrics-server-app chart"
