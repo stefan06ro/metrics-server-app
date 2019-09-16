@@ -9,15 +9,15 @@ Helm chart for Kubernetes Metrics Server running in Tenant Clusters
 To install the chart locally:
 
 ```bash
-$ git clone https://github.com/giantswarm/kubernetes-metrics-server.git
-$ cd kubernetes-metrics-server
-$ helm install kubernetes-metrics-server/helm/kubernetes-metrics-server-chart
+$ git clone https://github.com/giantswarm/metrics-server-app.git
+$ cd metrics-server-app
+$ helm install metrics-server-app/helm/metrics-server-app
 ```
 
 Provide a custom `values.yaml`:
 
 ```bash
-$ helm install kubernetes-metrics-server-chart -f values.yaml
+$ helm install metrics-server-app -f values.yaml
 ```
 
-Deployment to Tenant Clusters is handled by [chart-operator](https://github.com/giantswarm/chart-operator).
+Deployment to Tenant Clusters is handled by [app-operator](https://github.com/giantswarm/app-operator).
