@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	envVarTarballURL  = "TARBALL_URL"
+	envVarTarballURL  = "E2E_TARBALL_URL"
 	metricsServerName = "metrics-server"
 	chartName         = "kubernetes-metrics-server"
 )
