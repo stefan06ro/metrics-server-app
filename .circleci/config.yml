@@ -21,9 +21,6 @@ e2eTest: &e2eTest
         command: |
           ./e2ectl cluster create --worker-count=3
           cp $(./e2ectl kubeconfig path) ${E2E_TEST_DIR}/kubeconfig
-    - run:
-        name: Publish chart to CNR using a temporary channel for testing
-        command: ./architect publish --pipeline=false --channels=${CIRCLE_SHA1}-${E2E_TEST_NAME}
 
     - run:
         name: Run test
