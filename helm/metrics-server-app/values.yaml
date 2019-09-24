@@ -7,6 +7,8 @@ namespace: kube-system
 serviceType: managed
 k8sAppLabel: metrics-server
 
+replicas: 1
+
 userID: 1000
 groupID: 1000
 
