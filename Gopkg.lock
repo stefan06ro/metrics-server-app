@@ -150,14 +150,16 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:a8227c97ea1e82b49161d7b8ba409aba78d81b0745c529ce623b25592a6704e7"
+  digest = "1:d215f95a602549dac0d3027819c4d893278500102dbec20f348e593ec5275d06"
   name = "github.com/giantswarm/e2etests"
   packages = [
+    "basicapp",
+    "basicapp/legacyresource",
     "managedservices",
     "managedservices/legacyresource",
   ]
   pruneopts = "UT"
-  revision = "f024c8fd5a0d870d621bedb553d1591d851b935e"
+  revision = "71d00db6dc5d285af80f446395bfc8bcf2d0cf64"
 
 [[projects]]
   branch = "master"
@@ -190,6 +192,14 @@
   packages = ["."]
   pruneopts = "UT"
   revision = "85e779854c8e1b948bb2551e3750cfdae8ddfdbf"
+
+[[projects]]
+  branch = "master"
+  digest = "1:756dc2118be406f0b842f2becf8eaa380c6ca69933951bf027d18709c2016d30"
+  name = "github.com/giantswarm/kubernetes-metrics-server"
+  packages = ["integration/templates"]
+  pruneopts = "UT"
+  revision = "41665a4b51308b4082abc0ffead74b073f32e1fe"
 
 [[projects]]
   branch = "master"
@@ -890,9 +900,11 @@
     "github.com/giantswarm/e2esetup/chart",
     "github.com/giantswarm/e2esetup/chart/env",
     "github.com/giantswarm/e2esetup/k8s",
+    "github.com/giantswarm/e2etests/basicapp",
     "github.com/giantswarm/e2etests/managedservices",
     "github.com/giantswarm/helmclient",
     "github.com/giantswarm/k8sclient",
+    "github.com/giantswarm/kubernetes-metrics-server/integration/templates",
     "github.com/giantswarm/microerror",
     "github.com/giantswarm/micrologger",
     "github.com/spf13/afero",
