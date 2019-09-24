@@ -43,13 +43,6 @@ e2eTest: &e2eTest
         path: kind/logs
         destination: logs
 
-    - run:
-        name: Finish with cleanup, no matter if the test succeeded or not
-        command: |
-          ./e2ectl cluster delete
-          ./architect unpublish --channels=${CIRCLE_SHA1}-${E2E_TEST_NAME}
-        when: always
-
 jobs:
   build:
     machine: true
