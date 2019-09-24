@@ -21,17 +21,20 @@ import (
 )
 
 const (
-	envVarTarballURL  = "E2E_TARBALL_URL"
 	metricsServerName = "metrics-server"
 	chartName         = "kubernetes-metrics-server"
 )
 
+const (
+	envVarTarballURL = "E2E_TARBALL_URL"
+)
+
 var (
-	tarballURL string
+	ba         *basicapp.BasicApp
 	helmClient *helmclient.Client
 	k8sSetup   *k8s.Setup
 	l          micrologger.Logger
-	ba         *basicapp.BasicApp
+	tarballURL string
 )
 
 func init() {
