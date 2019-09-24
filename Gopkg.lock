@@ -150,7 +150,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:e4df4a25f2b41567bfb727af5fb21c3a3de6110bee7a9c50ff5afaca9670a49a"
+  digest = "1:d215f95a602549dac0d3027819c4d893278500102dbec20f348e593ec5275d06"
   name = "github.com/giantswarm/e2etests"
   packages = [
     "basicapp",
@@ -159,7 +159,7 @@
     "managedservices/legacyresource",
   ]
   pruneopts = "UT"
-  revision = "9b57d410b326bd950773eccb83609981c8d0ebbd"
+  revision = "71d00db6dc5d285af80f446395bfc8bcf2d0cf64"
 
 [[projects]]
   branch = "master"

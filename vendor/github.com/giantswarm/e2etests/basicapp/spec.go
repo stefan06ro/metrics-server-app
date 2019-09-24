@@ -15,10 +15,11 @@ type Clients interface {
 
 // Chart is the chart to test.
 type Chart struct {
-	Name        string
-	URL         string
-	ChartValues string
-	Namespace   string
+	Name            string
+	URL             string
+	ChartValues     string
+	Namespace       string
+	RunReleaseTests bool
 }
 
 func (cc Chart) Validate() error {

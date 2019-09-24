@@ -149,6 +149,10 @@ func (b *BasicApp) Test(ctx context.Context) error {
 	}
 
 	{
+		if !b.chart.RunReleaseTests {
+			return nil
+		}
+
 		b.logger.LogCtx(ctx, "level", "debug", "message", "running release tests")
 
 		err = b.helmClient.RunReleaseTest(ctx, b.chart.Name)
