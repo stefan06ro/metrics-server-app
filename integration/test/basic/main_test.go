@@ -100,7 +100,7 @@ func init() {
 
 			App: basicapp.Chart{
 				ChartValues: templates.MetricsServerValues,
-				Name:        chartName,
+				Name:        appName,
 				Namespace:   metav1.NamespaceSystem,
 				URL:         tarballURL,
 			},
