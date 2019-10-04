@@ -6,16 +6,11 @@ Helm chart for Kubernetes Metrics Server running in Tenant Clusters
 
 * Installs the [kubernetes-metrics-server].
 
-## Release Process
+## Deployment
 
-* Ensure CHANGELOG.md is up to date.
-* Create a new GitHub release which will push the tarball to the [default-catalog].
-* Update [cluster-operator] with the new version.
-
-[app-operator]: https://github.com/giantswarm/app-operator
-[cluster-operator]: https://github.com/giantswarm/app-operator
-[default-catalog]: https://github.com/giantswarm/default-catalog
-[default-test-catalog]: https://github.com/giantswarm/default-test-catalog
+* Managed by [app-operator].
+* Production releases are stored in the [default-catalog].
+* WIP releases are stored in the [default-test-catalog].
 
 ## Installing the Chart
 
