@@ -21,8 +21,7 @@ import (
 )
 
 const (
-	metricsServerName = "metrics-server"
-	chartName         = "kubernetes-metrics-server"
+	appName = "metrics-server"
 )
 
 const (
@@ -84,7 +83,7 @@ func init() {
 		c := helmclient.Config{
 			Logger:          l,
 			K8sClient:       k8sClients.K8sClient(),
-			RestConfig:      k8sClients.RestConfig(),
+			RestConfig:      k8sClients.RESTConfig(),
 			TillerNamespace: "giantswarm",
 		}
 		helmClient, err = helmclient.New(c)
@@ -101,25 +100,25 @@ func init() {
 
 			App: basicapp.Chart{
 				ChartValues: templates.MetricsServerValues,
-				Name:        chartName,
+				Name:        appName,
 				Namespace:   metav1.NamespaceSystem,
 				URL:         tarballURL,
 			},
 			ChartResources: basicapp.ChartResources{
 				Deployments: []basicapp.Deployment{
 					{
-						Name:      metricsServerName,
+						Name:      appName,
 						Namespace: metav1.NamespaceSystem,
 						DeploymentLabels: map[string]string{
 							"giantswarm.io/service-type": "managed",
-							"app":                        metricsServerName,
+							"app":                        appName,
 						},
 						MatchLabels: map[string]string{
-							"app": metricsServerName,
+							"app": appName,
 						},
 						PodLabels: map[string]string{
 							"giantswarm.io/service-type": "managed",
-							"app":                        metricsServerName,
+							"app":                        appName,
 						},
 					},
 				},
