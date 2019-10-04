@@ -1,8 +1,21 @@
+[![CircleCI](https://circleci.com/gh/giantswarm/metrics-server-app.svg?style=svg)](https://circleci.com/gh/giantswarm/metrics-server-app)
+
 # kubernetes-metrics-server
+
 Helm chart for Kubernetes Metrics Server running in Tenant Clusters
 
+* Installs the [kubernetes-metrics-server].
 
-* Installs the [kubernetes-metrics-server](https://github.com/kubernetes-incubator/metrics-server)
+## Release Process
+
+* Ensure CHANGELOG.md is up to date.
+* Create a new GitHub release which will push the tarball to the [default-catalog].
+* Update [cluster-operator] with the new version.
+
+[app-operator]: https://github.com/giantswarm/app-operator
+[cluster-operator]: https://github.com/giantswarm/app-operator
+[default-catalog]: https://github.com/giantswarm/default-catalog
+[default-test-catalog]: https://github.com/giantswarm/default-test-catalog
 
 ## Installing the Chart
 
@@ -20,4 +33,14 @@ Provide a custom `values.yaml`:
 $ helm install metrics-server-app -f values.yaml
 ```
 
-Deployment to Tenant Clusters is handled by [app-operator](https://github.com/giantswarm/app-operator).
+ ## Release Process
+
+* Ensure CHANGELOG.md is up to date.
+* Create a new GitHub release which will push the tarball to the [default-catalog].
+* Update [cluster-operator] with the new version.
+
+[app-operator]: https://github.com/giantswarm/app-operator
+[cluster-operator]: https://github.com/giantswarm/app-operator
+[default-catalog]: https://github.com/giantswarm/default-catalog
+[default-test-catalog]: https://github.com/giantswarm/default-test-catalog
+[kubernetes-metrics-server]: https://github.com/kubernetes-incubator/metrics-server
