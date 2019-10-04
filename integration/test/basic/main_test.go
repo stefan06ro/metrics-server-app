@@ -21,8 +21,7 @@ import (
 )
 
 const (
-	metricsServerName = "metrics-server"
-	chartName         = "kubernetes-metrics-server"
+	appName = "metrics-server"
 )
 
 const (
@@ -108,18 +107,18 @@ func init() {
 			ChartResources: basicapp.ChartResources{
 				Deployments: []basicapp.Deployment{
 					{
-						Name:      metricsServerName,
+						Name:      appName,
 						Namespace: metav1.NamespaceSystem,
 						DeploymentLabels: map[string]string{
 							"giantswarm.io/service-type": "managed",
-							"app":                        metricsServerName,
+							"app":                        appName,
 						},
 						MatchLabels: map[string]string{
-							"app": metricsServerName,
+							"app": appName,
 						},
 						PodLabels: map[string]string{
 							"giantswarm.io/service-type": "managed",
-							"app":                        metricsServerName,
+							"app":                        appName,
 						},
 					},
 				},
