@@ -31,7 +31,10 @@ $ helm install metrics-server-app -f values.yaml
  ## Release Process
 
 * Ensure CHANGELOG.md is up to date.
-* Create a new GitHub release which will push the tarball to the [default-catalog].
+* Create a new GitHub release with the version e.g. `v0.1.0` and link the
+changelog entry.
+* This will push a new git tag and trigger a new tarball to be pushed to the
+[default-catalog].  
 * Update [cluster-operator] with the new version.
 
 [app-operator]: https://github.com/giantswarm/app-operator
