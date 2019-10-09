@@ -7,7 +7,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [v0.4.1]
 
-### Changed
+### Added
 
 - Template image registry.
 
