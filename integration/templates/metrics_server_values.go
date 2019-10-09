@@ -17,7 +17,8 @@ apiService:
   create: true
   insecureSkipTLSVerify: true
 image:
-  repository: quay.io/giantswarm/metrics-server-amd64
+  registry: quay.io 
+  name: giantswarm/metrics-server-amd64
   tag: v0.3.1
   pullPolicy: IfNotPresent
 args:
