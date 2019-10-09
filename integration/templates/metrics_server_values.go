@@ -19,7 +19,7 @@ apiService:
 image:
   registry: quay.io 
   name: giantswarm/metrics-server-amd64
-  tag: v0.3.1
+  tag: v0.3.3
   pullPolicy: IfNotPresent
 args:
   - --logtostderr
