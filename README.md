@@ -1,8 +1,8 @@
-[![CircleCI](https://circleci.com/gh/giantswarm/metrics-server-app.svg?style=svg)](https://circleci.com/gh/giantswarm/metrics-server-app)
+[![CircleCI](https://circleci.com/gh/giantswarm/metrics-server-app.svg?style=shield)](https://circleci.com/gh/giantswarm/metrics-server-app)
 
 # kubernetes-metrics-server
 
-Helm chart for Kubernetes Metrics Server running in Tenant Clusters
+Helm chart for Kubernetes Metrics Server running in Tenant Clusters.
 
 * Installs the [kubernetes-metrics-server].
 
