@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@0.4.2
+  architect: giantswarm/architect@0.4.5
 
 e2eTest: &e2eTest
   machine: true
@@ -74,12 +74,8 @@ workflows:
     jobs:
       - build
 
-      - e2eTestBasic:
-          requires:
-            - build
-
       - architect/push-to-app-catalog:
-          name: "package and push metrics-server-app chart"
+          name: push-to-default-app-catalog
           app_catalog: "default-catalog"
           app_catalog_test: "default-test-catalog"
           chart: "metrics-server-app"
@@ -87,3 +83,12 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+
+      - e2eTestBasic:
+          requires:
+            - build
+            - push-to-default-app-catalog
+          filters:
+            branches:
+              ignore:
+                - master
