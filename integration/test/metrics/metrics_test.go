@@ -25,7 +25,7 @@ func TestMetrics(t *testing.T) {
 	ctx := context.Background()
 
 	// Install chart and wait for deployed status
-	err := ms.Test(ctx)
+	err := ba.Test(ctx)
 	if err != nil {
 		t.Fatalf("%#v", err)
 	}

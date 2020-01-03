@@ -67,6 +67,12 @@ jobs:
       E2E_TEST_DIR: "integration/test/basic"
       E2E_TEST_NAME: "basic"
     <<: *e2eTest
+  
+  e2eTestMetrics:
+    environment:
+      E2E_TEST_DIR: "integration/test/metrics"
+      E2E_TEST_NAME: "metrics"
+    <<: *e2eTest
 
 workflows:
   version: 2
@@ -79,8 +85,8 @@ workflows:
           app_catalog: "default-catalog"
           app_catalog_test: "default-test-catalog"
           chart: "metrics-server-app"
-          # Trigger job on git tag.
           filters:
+            # Trigger the job also on git tag.
             tags:
               only: /^v.*/
 
@@ -89,6 +95,17 @@ workflows:
             - build
             - push-to-default-app-catalog
           filters:
+             # Do not trigger the job on merge to master.
+            branches:
+              ignore:
+                - master
+      
+      - e2eTestMetrics:
+          requires:
+            - build
+            - push-to-default-app-catalog
+          filters:
+             # Do not trigger the job on merge to master.
             branches:
               ignore:
                 - master
