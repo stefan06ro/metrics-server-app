@@ -2,7 +2,7 @@
 
 package templates
 
-// MetricsServerValues values required by kubernetes-metrics-server-chart.
+// MetricsServerValues values required by metrics-server-app.
 const MetricsServerValues = `---
 name: metrics-server
 namespace: kube-system

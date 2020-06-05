@@ -7,10 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"k8s.io/helm/pkg/helm"
-
 	"github.com/giantswarm/backoff"
 	"github.com/giantswarm/microerror"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 const (
@@ -37,7 +36,7 @@ func TestMetrics(t *testing.T) {
 	}
 
 	// Delete release
-	err = helmClient.DeleteRelease(ctx, chartName, helm.DeletePurge(true))
+	err = helmClient.DeleteRelease(ctx, metav1.NamespaceSystem, appName)
 	if err != nil {
 		t.Fatalf("failed to teardown resource: %v", err)
 	}

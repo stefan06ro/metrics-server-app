@@ -9,6 +9,8 @@ k8sAppLabel: metrics-server
 
 replicas: 1
 
+e2e: false
+
 userID: 1000
 groupID: 1000
 
