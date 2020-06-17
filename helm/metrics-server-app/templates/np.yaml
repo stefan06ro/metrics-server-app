@@ -10,18 +10,17 @@ spec:
   podSelector:
     matchLabels:
       app: {{ .Values.name }}
+  policyTypes:
+  - Egress
+  - Ingress
   ingress:
   - ports:
     - port: {{ .Values.port }}
       protocol: TCP
   egress:
   - to:
+    {{ $privateSubnets := list "10.0.0.0/8" "172.16.0.0/12" "192.168.0.0/16" "100.64.0.0/10" -}}
+    {{ range $index, $privateSubnet := $privateSubnets -}}
     - ipBlock:
-        cidr: 10.0.0.0/8
-    - ipBlock:
-        cidr: 172.16.0.0/12
-    - ipBlock:
-        cidr: 192.168.0.0/16
-  policyTypes:
-  - Egress
-  - Ingress
+        cidr: {{ $privateSubnet }}
+    {{ end -}}
