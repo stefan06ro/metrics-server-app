@@ -9,6 +9,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ### Changed
 
+- Updated metrics-server version to 0.3.6.
 - Updated architect-orb to 0.10.0.
 
 ## [1.1.0] - 2020-06-17
