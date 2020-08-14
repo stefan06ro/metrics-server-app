@@ -51,7 +51,7 @@ func checkMetricsAvailability(ctx context.Context) error {
 
 	o := func() error {
 
-		_, err := restClient.Get().RequestURI(metricsAPIEndpoint).Stream()
+		_, err := restClient.Get().RequestURI(metricsAPIEndpoint).Stream(context.TODO())
 		if err != nil {
 			return err
 		}
