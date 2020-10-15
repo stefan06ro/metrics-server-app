@@ -4,7 +4,7 @@ go 1.14
 
 require (
 	github.com/giantswarm/apiextensions/v2 v2.0.1 // indirect
-	github.com/giantswarm/appcatalog v0.2.3
+	github.com/giantswarm/appcatalog v0.2.7
 	github.com/giantswarm/backoff v0.2.0
 	github.com/giantswarm/e2esetup/v2 v2.0.0
 	github.com/giantswarm/e2etests/v2 v2.0.0
