@@ -19,7 +19,6 @@ const (
 	app         = "metrics-server"
 	appName     = "metrics-server-app"
 	catalogName = "default-test"
-	catalogURL  = "https://giantswarm.github.io/default-test-catalog"
 )
 
 var (
@@ -57,13 +56,11 @@ func TestMain(m *testing.M) {
 	ctx := context.Background()
 
 	var err error
-	var v int
 
 	{
 		apps := []apptest.App{
 			{
 				CatalogName:   catalogName,
-				CatalogURL:    catalogURL,
 				Name:          appName,
 				Namespace:     metav1.NamespaceSystem,
 				SHA:           env.CircleSHA(),
@@ -73,15 +70,9 @@ func TestMain(m *testing.M) {
 		err = appTest.InstallApps(ctx, apps)
 		if err != nil {
 			l.LogCtx(ctx, "level", "error", "message", "install apps failed", "stack", fmt.Sprintf("%#v\n", err))
-			v = -1
+			os.Exit(-1)
 		}
 	}
 
-	{
-		if v == 0 {
-			v = m.Run()
-		}
-	}
-
-	os.Exit(v)
+	os.Exit(m.Run())
 }

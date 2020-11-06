@@ -42,3 +42,4 @@ changelog entry.
 [default-catalog]: https://github.com/giantswarm/default-catalog
 [default-test-catalog]: https://github.com/giantswarm/default-test-catalog
 [kubernetes-metrics-server]: https://github.com/kubernetes-incubator/metrics-server
+
