@@ -3,8 +3,7 @@ kind: PodSecurityPolicy
 metadata:
   name: {{ .Values.name }}
   labels:
-    app: {{ .Values.name }}
-    giantswarm.io/service-type: "managed"
+    {{- include "labels.common" . | nindent 4 }}
 spec:
   privileged: false
   runAsUser:
@@ -18,6 +17,7 @@ spec:
         max: 65535
   volumes:
   - 'secret'
+  - 'emptyDir'
   hostPID: false
   hostIPC: false
   hostNetwork: false
@@ -27,4 +27,3 @@ spec:
       - min: 1
         max: 65535
   readOnlyRootFilesystem: false
-

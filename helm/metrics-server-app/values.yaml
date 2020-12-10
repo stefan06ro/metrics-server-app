@@ -1,11 +1,10 @@
-# Default values for metrics-server-chart
+# Default values for metrics-server chart
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 name: metrics-server
 namespace: kube-system
 serviceType: managed
-k8sAppLabel: metrics-server
 
 replicas: 1
 
@@ -13,6 +12,10 @@ e2e: false
 
 userID: 1000
 groupID: 1000
+
+project:
+  branch: "[[ .Branch ]]"
+  commit: "[[ .SHA ]]"
 
 port: 10443
 
@@ -38,17 +41,21 @@ apiService:
 
 image:
   registry: quay.io
-  name: giantswarm/metrics-server-amd64
-  tag: v0.3.6
+  name: giantswarm/metrics-server
+  tag: v0.4.1
   pullPolicy: IfNotPresent
 
 args:
   - --logtostderr
 # enable this if you have self-signed certificates, see: https://github.com/kubernetes-incubator/metrics-server
   - --kubelet-insecure-tls
-  - --kubelet-preferred-address-types=InternalIP,Hostname,InternalDNS,ExternalDNS,ExternalIP
+  - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+  - --kubelet-use-node-status-port
   - --cert-dir=/tmp
   - --secure-port=10443
+
+priorityClassName: giantswarm-critical
+
 resources: {}
 
 nodeSelector: {}

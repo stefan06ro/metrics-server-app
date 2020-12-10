@@ -51,7 +51,7 @@ func checkMetricsAvailability(ctx context.Context) error {
 
 		return nil
 	}
-	b := backoff.NewConstant(2*time.Minute, 5*time.Second)
+	b := backoff.NewConstant(5*time.Minute, 5*time.Second)
 	n := backoff.NewNotifier(l, ctx)
 
 	err = backoff.RetryNotify(o, b, n)

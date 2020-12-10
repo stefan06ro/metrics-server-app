@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Updated metrics-server version to 0.4.1.
+
 ## [1.1.1] - 2020-07-23
 
 ### Changed
