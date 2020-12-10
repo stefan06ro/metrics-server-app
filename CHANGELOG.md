@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.2.1] - 2020-12-10
+
 - Push app to control plane catalogs
 
 ## [1.2.0] - 2020-12-10
@@ -70,7 +72,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
     - Add kubelet-certificate-authority flag
 
-[Unreleased]: https://github.com/giantswarm/metrics-server-app/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/giantswarm/metrics-server-app/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/giantswarm/metrics-server-app/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/giantswarm/metrics-server-app/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/giantswarm/metrics-server-app/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/giantswarm/metrics-server-app/compare/v1.0.0...v1.1.0
