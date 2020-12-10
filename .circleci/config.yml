@@ -17,6 +17,16 @@ workflows:
             tags:
               only: /^v.*/
 
+      - architect/push-to-app-catalog:
+          name: push-to-control-plane-app-catalog
+          app_catalog: "control-plane-catalog"
+          app_catalog_test: "control-plane-test-catalog"
+          chart: "metrics-server-app"
+          filters:
+            # Trigger the job also on git tag.
+            tags:
+              only: /^v.*/
+
       - architect/integration-test:
           context: architect
           name: metrics-integration-test
@@ -29,3 +39,45 @@ workflows:
                 - master
           requires:
             - push-to-default-app-catalog
+
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-metrics-server-to-aws-app-collection
+          app_name: "metrics-server-app"
+          app_namespace: "kube-system"
+          app_collection_repo: "aws-app-collection"
+          requires:
+            - push-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-metrics-server-to-azure-app-collection
+          app_name: "metrics-server-app"
+          app_namespace: "kube-system"
+          app_collection_repo: "azure-app-collection"
+          requires:
+            - push-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-metrics-server-to-kvm-app-collection
+          app_name: "metrics-server-app"
+          app_namespace: "kube-system"
+          app_collection_repo: "kvm-app-collection"
+          requires:
+            - push-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/

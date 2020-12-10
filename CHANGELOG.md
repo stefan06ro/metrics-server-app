@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+- Push app to control plane catalogs
+
 ## [1.2.0] - 2020-12-10
 
 ### Changed
