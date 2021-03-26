@@ -40,7 +40,7 @@ apiService:
   insecureSkipTLSVerify: true
 
 image:
-  registry: quay.io
+  registry: docker.io
   name: giantswarm/metrics-server
   tag: v0.4.1
   pullPolicy: IfNotPresent
