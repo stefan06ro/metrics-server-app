@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Added
+
+- Added new configuration value `extraArgs`.
+
 ## [1.2.2] - 2021-03-26
 
 ### Changed

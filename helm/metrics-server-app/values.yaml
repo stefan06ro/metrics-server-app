@@ -54,6 +54,8 @@ args:
   - --cert-dir=/tmp
   - --secure-port=10443
 
+extraArgs: []
+
 priorityClassName: giantswarm-critical
 
 resources: {}

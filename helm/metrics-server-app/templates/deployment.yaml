@@ -30,6 +30,9 @@ spec:
           {{- range .Values.args }}
           - {{ . | quote }}
           {{- end }}
+          {{- range .Values.extraArgs }}
+          - {{ . | quote }}
+          {{- end }}
           image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           livenessProbe:
