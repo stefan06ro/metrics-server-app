@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.4.0] - 2021-08-13
+
 ## [1.3.0] - 2021-05-10
 
 ### Added
@@ -84,7 +86,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
     - Add kubelet-certificate-authority flag
 
-[Unreleased]: https://github.com/giantswarm/metrics-server-app/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/giantswarm/metrics-server-app/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/giantswarm/metrics-server-app/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/giantswarm/metrics-server-app/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/giantswarm/metrics-server-app/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/giantswarm/metrics-server-app/compare/v1.2.0...v1.2.1
