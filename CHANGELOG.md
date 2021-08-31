@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Bumped API version for `RoleBinding` to `v1` as it was using a deprecated version (removed in 1.22).
+
 ## [1.4.0] - 2021-08-13
 
 ## [1.3.0] - 2021-05-10
